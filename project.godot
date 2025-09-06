@@ -11,5 +11,13 @@ config_version=5
 [application]
 
 config/name="Zoom Whack-a-Mole"
+run/main_scene="res://MainScene.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Art/icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
