@@ -1,4 +1,5 @@
 extends LineEdit
+
 func _on_text_submitted(text):
 	print('_on_text_entered called')
 	var pb=get_node('../ProgressBar')
