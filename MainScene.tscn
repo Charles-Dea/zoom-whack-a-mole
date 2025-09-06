@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://vftrfnlxnjbc"]
+[gd_scene load_steps=6 format=3 uid="uid://vftrfnlxnjbc"]
 
 [ext_resource type="Script" uid="uid://06iq3o85m8ir" path="res://main_scene.gd" id="1_rpqi1"]
 [ext_resource type="PackedScene" uid="uid://blehuj66msp0o" path="res://PageGrid.tscn" id="1_x4av3"]
 [ext_resource type="PackedScene" uid="uid://eh1bp5mnhfdl" path="res://color_rect.tscn" id="2_rpqi1"]
+[ext_resource type="AudioStream" uid="uid://cbujyf34wlke8" path="res://dvine - Unknown Reality.mp3" id="4_uxrcv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4av3"]
 bg_color = Color(0.244777, 0.244776, 0.244776, 1)
@@ -84,6 +85,11 @@ text = "▶"
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.07
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uxrcv")
+autoplay = true
+parameters/looping = false
 
 [connection signal="pressed" from="UIStack/NavAndMain/LeftButtonParent/LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="UIStack/NavAndMain/RightButtonParent/RightButton" to="." method="_on_right_button_pressed"]
