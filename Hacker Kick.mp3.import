@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvu22xn5qsjq1"
+path="res://.godot/imported/Hacker Kick.mp3-f8c918ef2b7e6c5236f116179b6e2ded.mp3str"
+
+[deps]
+
+source_file="res://Hacker Kick.mp3"
+dest_files=["res://.godot/imported/Hacker Kick.mp3-f8c918ef2b7e6c5236f116179b6e2ded.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
