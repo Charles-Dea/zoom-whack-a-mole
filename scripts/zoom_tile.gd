@@ -1,5 +1,7 @@
 extends Panel
 
+var dropdown
+
 @onready var initialsLabel: Label = $Initial/InitialsLabel
 @onready var nameLabel: Label = $Stack/NameLabel
 @onready var muteIcon: TextureRect = $Stack/MuteAndCamera/MuteIcon
@@ -9,7 +11,7 @@ extends Panel
 @onready var talkingPanel: Panel = $Talking
 
 var tileUser: Zoom.User
-@export var invisible: bool:
+@export var invisible: bool = true:
 	set(value):
 		invisible = value
 		modulate.a = 1.0 - float(invisible)
@@ -92,3 +94,13 @@ func _ready() -> void:
 		muteIcon.show()
 	else:
 		muteIcon.hide()
+
+
+func _on_dropdown_button_pressed() -> void:
+	if dropdown==null and not invisible:
+		dropdown=load('res://Dropdown.tscn').instantiate()
+		dropdown.user = tileUser
+		get_tree().current_scene.add_child(dropdown)
+	elif dropdown != null:
+		dropdown.queue_free()
+		dropdown=null

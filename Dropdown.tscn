@@ -1,38 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://1dc733r66006"]
+[gd_scene load_steps=3 format=3 uid="uid://1dc733r66006"]
 
-[ext_resource type="Script" path="res://dropdown.gd" id="1_35oqj"]
-[ext_resource type="Script" path="res://mute.gd" id="1_s2wjk"]
-[ext_resource type="Script" path="res://camera.gd" id="2_703hi"]
-[ext_resource type="Script" path="res://kick.gd" id="4_y4kuo"]
+[ext_resource type="Script" uid="uid://b1lldryxorfgj" path="res://dropdown.gd" id="1_35oqj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4kuo"]
+bg_color = Color(0.2, 0.686275, 0.85098, 1)
 
 [node name="Dropdown" type="Control"]
+z_index = 100
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1731.0
+offset_bottom = -964.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_35oqj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_35oqj")
 
-[node name="Mute" type="Button" parent="."]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 31.0
+[node name="Mute" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_y4kuo")
 text = "Mute"
-script = ExtResource("1_s2wjk")
 
-[node name="Camera" type="Button" parent="."]
-layout_mode = 0
-offset_top = 32.0
-offset_right = 129.0
-offset_bottom = 63.0
-text = "Turn of Camera"
-script = ExtResource("2_703hi")
+[node name="Camera" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_y4kuo")
+text = "Turn off Camera"
 
-[node name="Kick" type="Button" parent="."]
-layout_mode = 0
-offset_top = 64.0
-offset_right = 128.0
-offset_bottom = 95.0
+[node name="Kick" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_y4kuo")
 text = "Kick"
-script = ExtResource("4_y4kuo")
+
+[connection signal="pressed" from="VBoxContainer/Mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="VBoxContainer/Camera" to="." method="_on_camera_pressed"]
+[connection signal="pressed" from="VBoxContainer/Kick" to="." method="_on_kick_pressed"]

@@ -10,7 +10,7 @@ const startingMaxSpawnFreq: float = 7.0
 const minSpawnFreqPctChange: float = .01
 const maxSpawnFreqPctChange: float = .05
 
-const startingHackerChance: float = .2
+const startingHackerChance: float = .1
 const maxHackerChance: float = .5
 const startingHackerDifficulty: float = .1
 

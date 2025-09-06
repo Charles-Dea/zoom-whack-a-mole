@@ -57,6 +57,8 @@ func generate_user(instant: bool = false):
 	var chanceRoll: float = randf()
 	if chanceRoll <= currentHackerChance:
 		var newHacker = Zoom.Hacker.new(Globals.random_first_name(), Globals.random_last_name(), true, false, false, newUserRow, newUserCol, newUserPage)
+		if newUserPage == current_page:
+			newHacker.focused = true
 		user_list.append(newHacker)
 	else:
 		var cameraOnIn: float = -1
