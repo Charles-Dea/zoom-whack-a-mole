@@ -13,7 +13,8 @@ config_version=5
 config/name="Zoom Whack-a-Mole"
 run/main_scene="uid://bntk0l4nt078i"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Art/icon.svg"
+boot_splash/image="uid://dj6qjhd8qghxy"
+config/icon="uid://dvon0gdpfq7cc"
 
 [autoload]
 
@@ -24,6 +25,5 @@ Zoom="*res://scripts/ZoomUser.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"

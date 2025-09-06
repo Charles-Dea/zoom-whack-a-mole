@@ -1,5 +1,13 @@
 extends Panel
 
+@onready var initialsLabel: Label = $Initial/InitialsLabel
+@onready var nameLabel: Label = $Stack/NameLabel
+@onready var muteIcon: TextureRect = $Stack/MuteAndCamera/MuteIcon
+@onready var cameraIcon: TextureRect = $Stack/MuteAndCamera/CameraIcon
+@onready var cameraFootage: TextureRect = $CameraFootage
+@onready var deathProgressBar: ProgressBar = $CameraFootage/DeathProgressBar
+@onready var talkingPanel: Panel = $Talking
+
 @export var invisible: bool:
 	set(value):
 		invisible = value
@@ -8,43 +16,43 @@ extends Panel
 	set(value):
 		muted = value
 		if muted:
-			$MuteAndCamera/MuteIcon.show()
+			muteIcon.show()
 		else:
-			$MuteAndCamera/MuteIcon.hide()
+			muteIcon.hide()
 @export var cameraOff: bool = true:
 	set(value):
 		cameraOff = value
 		if cameraOff:
 			if is_node_ready():
-				$CameraFootage.hide()
-				$MuteAndCamera/CameraIcon.show()
-			
+				cameraFootage.hide()
+				cameraIcon.show()
 		else:
 			if is_node_ready():
-				$CameraFootage.show()
-				$MuteAndCamera/CameraIcon.hide()
+				cameraFootage.show()
+				cameraIcon.hide()
 @export var cameraImage: Texture2D:
 	set(value):
 		cameraImage = value
 		if is_node_ready():
-			$CameraFootage.texture = value
+			cameraFootage.texture = value
 @export var firstName: String = "Joe":
 	set(value):
 		firstName = value
 		if is_node_ready():
-			$NameLabel.text = firstName + " " + lastName
-			$InitialsLabel.text = firstName[0].to_upper() + lastName[0].to_upper()
+			nameLabel.text = firstName + " " + lastName
+			initialsLabel.text = firstName[0].to_upper() + lastName[0].to_upper()
 @export var lastName: String = "Mama":
 	set(value):
 		lastName = value
 		if is_node_ready():
-			$NameLabel.text = firstName + " " + lastName
-			$InitialsLabel.text = firstName[0].to_upper() + lastName[0].to_upper()
+			nameLabel.text = firstName + " " + lastName
+			initialsLabel.text = firstName[0].to_upper() + lastName[0].to_upper()
 @export var talking: bool = false:
 	set(value):
 		talking = value
 		if is_node_ready():
-			$Talking.visible = talking
+      talkingPanel.visible = talking
+
 func kick():
 	queue_free()
 
@@ -58,19 +66,24 @@ func importFromUser(user: Zoom.User):
 		talking = false
 	else:
 		talking = user.talking
+	if user.type == Zoom.UserType.HACKER:
+		var hacker: Zoom.Hacker = user as Zoom.Hacker
+		deathProgressBar.visible = true
+		deathProgressBar.value = user.deathProgress
+			
 
 func _ready() -> void:
 	modulate.a = 1.0 - float(invisible)
-	$NameLabel.text = firstName + " " + lastName
-	$InitialsLabel.text = firstName[0].to_upper() + lastName[0].to_upper()
-	$CameraFootage.texture = cameraImage
+	nameLabel.text = firstName + " " + lastName
+	initialsLabel.text = firstName[0].to_upper() + lastName[0].to_upper()
+	cameraFootage.texture = cameraImage
 	if cameraOff:
-		$MuteAndCamera/CameraIcon.show()
-		$CameraFootage.hide()
+		cameraIcon.show()
+		cameraFootage.hide()
 	else:
-		$CameraFootage.show()
-		$MuteAndCamera/CameraIcon.hide()
+		cameraFootage.show()
+		cameraIcon.hide()
 	if muted:
-		$MuteAndCamera/MuteIcon.show()
+		muteIcon.show()
 	else:
-		$MuteAndCamera/MuteIcon.hide()
+		muteIcon.hide()
