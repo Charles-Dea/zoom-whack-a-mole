@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://7q5ewfdpkdll"]
+
+[ext_resource type="Script" uid="uid://dx6u36bvwsfqt" path="res://intro.gd" id="1_s2ta7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2ta7")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "All the way back in 2020, when COVID-19 ravaged the world, students everywhere were forced to abandon their classrooms and retreat into the digital sphere. Schools, universities, and training programs scrambled to keep education alive, migrating almost overnight to online platforms — and at the heart of it all was Zoom. What had once been a niche video conferencing tool became the backbone of global education, communication, and business.
+
+But with every technological leap comes a shadow.
+
+It started quietly at first — a few strange names appearing on zoom bridges, unfamiliar faces popping into study groups. But soon, it became a full-blown phenomenon. Hackers, trolls, and digital disruptors began infiltrating these virtual classrooms, masquerading as students. Some would unleash chaos by spamming ridiculous images, blasting loud music, or derailing lectures with endless technical disruptions. Others were far more sinister — quietly collecting personal information, stealing passwords, and compromising accounts, targeting vulnerable students who simply wanted to learn in peace.
+
+This was not just mischief; it was cyber warfare waged on the fragile new educational infrastructure.
+
+To combat this, a new kind of defender was born: the Hacker Whacker. Neither a teacher nor a traditional IT professional, a Hacker Whacker was part digital bodyguard, part counter-hacker. Equipped with state-of-the-art detection tools, rapid-response protocols, and a deep knowledge of both human behavior and network architecture, they were the invisible shields standing between the chaos and the classroom.
+
+And now, you have been assigned to this duty.
+
+Your mission is clear: protect the sanctity of online education. Guard every Zoom bridge, every breakout room, every vulnerable student from the relentless waves of disruption. You’ll patrol the virtual hallways, scanning for digital intruders, and locking down entry points faster than they can be breached. When an attack begins, you’ll need to act swiftly — isolating the threat, neutralizing the hacker, and restoring order before the lesson is lost to chaos.
+
+But the enemy is clever. They evolve. They adapt. Every day they find new exploits, hidden vulnerabilities, and social engineering tricks to slip past even the best defenses. You won’t just be stopping random trolls — you’ll be going head-to-head with organized networks, individuals hungry for data, or simply those who delight in disorder.
+
+In this new era of online learning, the classroom has no walls — and neither does the battlefield.
+
+The future of education depends on defenders like you, the unsung heroes of the digital age: the Hacker Whackers."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 282.0
+offset_bottom = 23.0
+text = "Click to Progress"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
