@@ -51,7 +51,7 @@ extends Panel
 	set(value):
 		talking = value
 		if is_node_ready():
-      talkingPanel.visible = talking
+			talkingPanel.visible = talking
 
 func kick():
 	queue_free()

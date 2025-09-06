@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbq5wjhc2eefg"]
+
+[ext_resource type="Texture2D" uid="uid://dtir648uas1yt" path="res://black.png" id="1_a1htc"]
+[ext_resource type="Script" uid="uid://8hffwqfw1b6" path="res://exit.gd" id="2_eksk4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(1052, 728)
+scale = Vector2(5.41406, 3)
+texture = ExtResource("1_a1htc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -376.0
+offset_right = 376.0
+offset_bottom = 448.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 128
+text = "THE HACKERS HAVE WON!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -800.0
+offset_top = -256.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 128
+text = "Exit to main menu."
+script = ExtResource("2_eksk4")
