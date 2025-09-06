@@ -1,4 +1,5 @@
 extends Node
+
 enum UserType {STUDENT, HACKER}
 class User:
 	var type: UserType = UserType.STUDENT
@@ -26,7 +27,7 @@ class User:
 		set(value):
 			talking = value
 			updateZoomTile()
-	var cameraImage: Texture2D=Globals.load_image("wakeup"):
+	var cameraImage: Texture2D=Globals.load_image("wakeup.jpg"):
 		set(value):
 			cameraImage = value
 			updateZoomTile()
@@ -75,7 +76,7 @@ class User:
 		if elapsedTime >= cameraOnIn and cameraOff:
 			activateCamera()
 	
-	func _init(firstName: String="Joe", lastName: String="Mama", cameraOff: bool=true, muted: bool=false, talking:bool=false, cameraImage: Texture2D=Globals.load_image("wakeup"), row: int = 1, col: int = 1, page: int = 1, cameraOnIn: float = -1):
+	func _init(firstName: String="Joe", lastName: String="Mama", cameraOff: bool=true, muted: bool=false, talking:bool=false, cameraImage: Texture2D=Globals.load_image("wakeup.jpg"), row: int = 1, col: int = 1, page: int = 1, cameraOnIn: float = -1):
 		self.row = row
 		self.col = col
 		self.page = page
