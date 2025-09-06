@@ -1,11 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://tdt5iehobnsg"]
+[gd_scene load_steps=3 format=3 uid="uid://4bryqd5imi21"]
 
+[ext_resource type="Script" uid="uid://iyaga10k3j3a" path="res://credits.gd" id="1_c1t8d"]
 [ext_resource type="Texture2D" uid="uid://c8looa830vy1t" path="res://credits.png" id="1_nm7lk"]
 
-[node name="Button" type="Button"]
+[node name="Credits" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("1_nm7lk")
+script = ExtResource("1_c1t8d")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_nm7lk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
