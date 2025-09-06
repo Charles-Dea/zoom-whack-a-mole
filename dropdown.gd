@@ -28,6 +28,14 @@ func _on_kick_pressed() -> void:
 	else:
 		root.currentHackerDifficulty = min(root.currentHackerDifficulty + Globals.userDeathPenalty, 1.0)
 	root.user_list = root.user_list.filter(func (u): return u != user)
-
+	play_sfx(root, "res://Hacker Kick.mp3", -20)
 	root.update_zoom_tiles()
 	queue_free()
+
+func play_sfx(root, path: String, volume_db: float = -6.0) -> void:
+	var player = AudioStreamPlayer.new()
+	player.stream = load(path)
+	player.volume_db = volume_db
+	player.finished.connect(func(): player.queue_free())
+	root.add_child(player)
+	player.play()
