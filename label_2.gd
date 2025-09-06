@@ -1,3 +1,3 @@
 extends Label
 func _ready():
-	text='Score: '+str(Globals.score)
+	text='Score: %d' % Globals.score

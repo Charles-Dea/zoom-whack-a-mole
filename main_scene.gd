@@ -55,7 +55,9 @@ func generate_user(instant: bool = false):
 	var newUserRow = pageCoord[0]
 	var newUserCol = pageCoord[1]
 	var chanceRoll: float = randf()
+	currentHackerChance = Globals.startingHackerChance * (1 - currentHackerDifficulty) + Globals.maxHackerChance * currentHackerDifficulty
 	if chanceRoll <= currentHackerChance:
+		var doomsdayCountdown: float = randf_range(Globals.hackerDoomsdayMinimum * currentHackerDifficulty + Globals.hackerDoomsdayMaximum *(1.0 - currentHackerDifficulty), Globals.hackerDoomsdayMaximum)
 		var newHacker = Zoom.Hacker.new(Globals.random_first_name(), Globals.random_last_name(), true, false, false, newUserRow, newUserCol, newUserPage)
 		if newUserPage == current_page:
 			newHacker.focused = true
@@ -103,15 +105,17 @@ func update_zoom_tiles():
 	
 func update_nav_buttons():
 	if current_page == max_page():
-		rightButton.disabled = true
+		rightButton.visible = false
 	else:
-		rightButton.disabled = false
+		rightButton.visible = true
 	if current_page == 1:
-		leftButton.disabled = true
+		leftButton.visible = false
 	else:
-		leftButton.disabled = false
+		leftButton.visible = true
 
 func _ready() -> void:
+	Globals.score = 0
+	Globals.gameOver = false
 	var startingUsers = randi_range(Globals.startingUserCountMin,Globals.startingUserCountMax)
 	for i in range(startingUsers):
 		generate_user(true)
@@ -119,13 +123,14 @@ func _ready() -> void:
 	Globals.score = 0
 
 func _process(delta: float) -> void:
-	for user in user_list:
-		user.updateUser(delta)
-	elapsedTime += delta
-	if elapsedTime >= till_next_user:
-		elapsedTime = fmod(elapsedTime, till_next_user)
-		generate_user()
-	Globals.score+=delta*50
+	if not Globals.gameOver:
+		for user in user_list:
+			user.updateUser(delta)
+		elapsedTime += delta
+		if elapsedTime >= till_next_user:
+			elapsedTime = fmod(elapsedTime, till_next_user)
+			generate_user()
+		Globals.score += delta * 50
 
 func _on_left_button_pressed() -> void:
 	current_page -= 1

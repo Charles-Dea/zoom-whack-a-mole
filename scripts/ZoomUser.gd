@@ -13,12 +13,17 @@ class User:
 			updateZoomTile()
 	var cameraOff: bool=true:
 		set(value):
-			if not value:
+			if value:
 				cameraOff = value
 			elif not forceCameraOff:
 				cameraOff = value
 			updateZoomTile()
-	var forceCameraOff: bool=false
+	var forceCameraOff: bool=false:
+		set(value):
+			if type != UserType.HACKER:
+				forceCameraOff = value
+				if forceCameraOff:
+					cameraOff = true
 	var muted: bool=true:
 		set(value):
 			muted = value
@@ -65,7 +70,8 @@ class User:
 		return row >= 1 and row <= 5 and col >= 1 and col <= 5
 	
 	func updateZoomTile():
-		get_zoom_tile().importFromUser(self)
+		if not Globals.gameOver:
+			get_zoom_tile().importFromUser(self)
 		
 	func activateCamera():
 		cameraOff = false
@@ -105,4 +111,8 @@ class Hacker extends User:
 		if not cameraOff:
 			deathProgress = (elapsedTime / timeToDeath) * 100
 			if deathProgress >= 100:
-				Globals.endGame()
+				endGame()
+				
+	func endGame():
+		Globals.gameOver = true
+		Globals.get_the_tree().change_scene_to_file("res://GameOver.tscn")

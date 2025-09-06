@@ -16,15 +16,18 @@ func _on_mute_pressed() -> void:
 	queue_free()
 
 func _on_camera_pressed() -> void:
-	print("Camera pressed")
 	var root = get_tree().current_scene
 	user.forceCameraOff = true
-	user.cameraOff = true
 	root.update_zoom_tiles()
 	queue_free()
 
 func _on_kick_pressed() -> void:
 	var root = get_tree().current_scene
+	if user.type == Zoom.UserType.HACKER:
+		root.currentHackerDifficulty = min(root.currentHackerDifficulty + Globals.hackerDeathPenalty, 1.0)
+	else:
+		root.currentHackerDifficulty = min(root.currentHackerDifficulty + Globals.userDeathPenalty, 1.0)
 	root.user_list = root.user_list.filter(func (u): return u != user)
+
 	root.update_zoom_tiles()
 	queue_free()

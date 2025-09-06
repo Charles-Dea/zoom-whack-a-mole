@@ -11,8 +11,13 @@ const minSpawnFreqPctChange: float = .02
 const maxSpawnFreqPctChange: float = .1
 
 const startingHackerChance: float = .4
-const maxHackerChance: float = 1
+const maxHackerChance: float = .75
+
 const startingHackerDifficulty: float = .2
+const maxHackerDifficulty: float = 1.0
+
+const hackerDoomsdayMinimum: float = 10
+const hackerDoomsdayMaximum: float = 20
 
 const startingUserCountMin: int = 1
 const startingUserCountMax: int = 1
@@ -20,6 +25,11 @@ const startingUserCountMax: int = 1
 const userCameraOnInMin: int = 3
 const userCameraOnInMax: int = 20
 const userCameraOnChance: float = .2
+
+const hackerDeathPenalty: float = .025
+const userDeathPenalty: float = .05
+
+var gameOver: bool = false
 
 @export var score = 0
 
@@ -85,5 +95,8 @@ func get_pfp_names() -> Array[String]:
 	else:
 		push_error("Cannot open directory: " + path)
 	return files
+
+func get_the_tree():
+	return get_tree()
 func endGame():
 	get_tree().change_scene_to_file('res://GameOver.tscn')
