@@ -1,5 +1,7 @@
 extends Node
+enum UserType {STUDENT, HACKER}
 class User:
+	var type: UserType = UserType.STUDENT
 	var firstName: String="Joe": 
 		set(value):
 			firstName = value
@@ -45,6 +47,9 @@ class User:
 	var page: int = -1:
 		set(value):
 			page = value
+		
+	var elapsedTime: float = 0.0
+	var cameraOnIn: float = -1.0
 	
 	func get_zoom_tile():
 		return Globals.get_zoom_tile(row, col)
@@ -54,8 +59,11 @@ class User:
 	
 	func updateZoomTile():
 		get_zoom_tile().importFromUser(self)
-		
-	func _init(firstName: String="Joe", lastName: String="Mama", cameraOff: bool=true, muted: bool=true, talking:bool=false, cameraImage: Texture2D=Globals.load_image("wakeup"), row: int = 1, col: int = 1, page: int = 1):
+	
+	func updateUser(deltaTime: float):
+		elapsedTime += deltaTime
+	
+	func _init(firstName: String="Joe", lastName: String="Mama", cameraOff: bool=true, muted: bool=false, talking:bool=false, cameraImage: Texture2D=Globals.load_image("wakeup"), row: int = 1, col: int = 1, page: int = 1):
 		self.row = row
 		self.col = col
 		self.page = page
@@ -65,4 +73,15 @@ class User:
 		self.muted = muted
 		self.talking = talking
 		self.cameraImage = cameraImage
+		
+class Hacker extends User:
+	var deathProgress: float = 0.0
+	var timeToDeath: float = 30.0
+	func _init(firstName: String="Joe", lastName: String="Mama", cameraOff: bool=true, muted: bool=false, talking:bool=false, cameraImage: Texture2D=Globals.load_image("anonymous"), row: int = 1, col: int = 1, page: int = 1, timeToDeath: float = 30, cameraOnIn: int = 10):
+		super._init(firstName, lastName, cameraOff, muted, talking, cameraImage, row, col, page)
+		self.type = UserType.HACKER
+		self.timeToDeath = timeToDeath
+	func updateUser(deltaTime: float):
+		super.updateUser(deltaTime)
+		
 		
