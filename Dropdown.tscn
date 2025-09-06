@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://drsrtu0apbrj5"]
+[gd_scene load_steps=5 format=3 uid="uid://d20yih1gxn4gd"]
+
+[ext_resource type="Script" uid="uid://b1lldryxorfgj" path="res://dropdown.gd" id="1_35oqj"]
+[ext_resource type="Script" uid="uid://dx0w71dl3nuon" path="res://mute.gd" id="1_s2wjk"]
+[ext_resource type="Script" uid="uid://bqxrn3qp2ovug" path="res://camera.gd" id="2_703hi"]
+[ext_resource type="Script" uid="uid://bpwo6aomtbev4" path="res://kick.gd" id="4_y4kuo"]
 
 [node name="Dropdown" type="Control"]
 layout_mode = 3
@@ -7,3 +12,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_35oqj")
+
+[node name="Mute" type="Button" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 31.0
+text = "Mute"
+script = ExtResource("1_s2wjk")
+
+[node name="Camera" type="Button" parent="."]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 129.0
+offset_bottom = 63.0
+text = "Turn of Camera"
+script = ExtResource("2_703hi")
+
+[node name="Kick" type="Button" parent="."]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 95.0
+text = "Kick"
+script = ExtResource("4_y4kuo")

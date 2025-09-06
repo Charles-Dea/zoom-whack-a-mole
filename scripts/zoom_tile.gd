@@ -45,6 +45,9 @@ extends Panel
 		talking = value
 		if is_node_ready():
 			$Talking.visible = talking
+func kick():
+	queue_free()
+
 func importFromUser(user: Zoom.User):
 	firstName = user.firstName
 	lastName = user.lastName

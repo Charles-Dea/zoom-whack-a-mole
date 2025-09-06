@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://cs50xt1v2t5hy" path="res://end.gd" id="7_dg4w3"]
 [ext_resource type="Script" uid="uid://bnkg4uotf8ypa" path="res://box.gd" id="7_trtdd"]
 
-
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 12
 anchor_top = 1.0
