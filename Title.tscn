@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4a2rwg443lfo" path="res://scripts/title.gd" id="1_c0dwi"]
 [ext_resource type="AudioStream" uid="uid://mpbbi1f5nomg" path="res://Title Music.mp3" id="2_ax32a"]
-[ext_resource type="VideoStream" uid="uid://cf26yxvks7883" path="res://output_video.ogv" id="3_quvj1"]
+[ext_resource type="VideoStream" path="res://output_video.ogv" id="3_quvj1"]
 
 [node name="Title" type="Control"]
 layout_mode = 3

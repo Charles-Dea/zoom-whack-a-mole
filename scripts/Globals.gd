@@ -21,6 +21,8 @@ const userCameraOnInMin: int = 3
 const userCameraOnInMax: int = 20
 const userCameraOnChance: float = .2
 
+@export var score = 0
+
 func adjustSpawnFreqBy(currentMin: float, currentMax: float, pctStep: float) -> Array[float]:
 	return [currentMin + (minSpawnFreq - currentMin) * pctStep, currentMax + (minSpawnFreq - currentMax) * pctStep]
 
@@ -83,3 +85,5 @@ func get_pfp_names() -> Array[String]:
 	else:
 		push_error("Cannot open directory: " + path)
 	return files
+func endGame():
+	get_tree().change_scene_to_file('res://GameOver.tscn')
