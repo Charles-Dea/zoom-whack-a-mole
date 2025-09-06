@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Zoom Whack-a-Mole"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="uid://bntk0l4nt078i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
