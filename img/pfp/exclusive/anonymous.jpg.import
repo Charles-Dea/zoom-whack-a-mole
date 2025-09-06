@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crbt3neaqdonb"
-path="res://.godot/imported/skibidi.jpg-b2ad57a5fcf63db65a85274950da5deb.ctex"
+uid="uid://dqerwi0sdl6yc"
+path="res://.godot/imported/anonymous.jpg-d92c8ab0130da7641d33be30ecd5deb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/pfp/skibidi.jpg"
-dest_files=["res://.godot/imported/skibidi.jpg-b2ad57a5fcf63db65a85274950da5deb.ctex"]
+source_file="res://img/pfp/exclusive/anonymous.jpg"
+dest_files=["res://.godot/imported/anonymous.jpg-d92c8ab0130da7641d33be30ecd5deb2.ctex"]
 
 [params]
 
