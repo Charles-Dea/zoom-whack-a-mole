@@ -16,6 +16,10 @@ class User:
 		set(value):
 			muted = value
 			updateZoomTile()
+	var talking: bool=true:
+		set(value):
+			talking = value
+			updateZoomTile()
 	var cameraImage: Texture2D=Globals.load_image("wakeup"):
 		set(value):
 			cameraImage = value
@@ -51,7 +55,7 @@ class User:
 	func updateZoomTile():
 		get_zoom_tile().importFromUser(self)
 		
-	func _init(firstName: String="Joe", lastName: String="Mama", cameraOff: bool=true, muted: bool=true, cameraImage: Texture2D=Globals.load_image("wakeup"), row: int = 1, col: int = 1, page: int = 1):
+	func _init(firstName: String="Joe", lastName: String="Mama", cameraOff: bool=true, muted: bool=true, talking:bool=false, cameraImage: Texture2D=Globals.load_image("wakeup"), row: int = 1, col: int = 1, page: int = 1):
 		self.row = row
 		self.col = col
 		self.page = page
@@ -59,5 +63,6 @@ class User:
 		self.lastName = lastName
 		self.cameraOff = cameraOff
 		self.muted = muted
+		self.talking = talking
 		self.cameraImage = cameraImage
 		

@@ -1,8 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://vftrfnlxnjbc"]
+[gd_scene load_steps=4 format=3 uid="uid://vftrfnlxnjbc"]
 
-[ext_resource type="Script" uid="uid://bs3158bxcmy2v" path="res://Scenes/canvas_layer.gd" id="1_3mqji"]
+[ext_resource type="PackedScene" uid="uid://blehuj66msp0o" path="res://PageGrid.tscn" id="1_x4av3"]
+[ext_resource type="PackedScene" uid="uid://eh1bp5mnhfdl" path="res://color_rect.tscn" id="2_rpqi1"]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4av3"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("1_3mqji")
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="LeftButtonParent" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.04
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/LeftButtonParent"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4av3")
+text = "⬅️"
+
+[node name="PageGrid" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_x4av3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightButtonParent\'" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" parent="VBoxContainer" instance=ExtResource("2_rpqi1")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07

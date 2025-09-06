@@ -40,13 +40,21 @@ extends Panel
 		if is_node_ready():
 			$NameLabel.text = firstName + " " + lastName
 			$InitialsLabel.text = firstName[0].to_upper() + lastName[0].to_upper()
-
+@export var talking: bool = false:
+	set(value):
+		talking = value
+		if is_node_ready():
+			$Talking.visible = talking
 func importFromUser(user: Zoom.User):
 	firstName = user.firstName
 	lastName = user.lastName
 	cameraImage = user.cameraImage
 	cameraOff = user.cameraOff
 	muted = user.muted
+	if muted:
+		talking = false
+	else:
+		talking = user.talking
 
 func _ready() -> void:
 	modulate.a = 1.0 - float(invisible)
