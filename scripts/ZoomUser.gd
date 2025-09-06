@@ -1,4 +1,5 @@
 extends Node
+
 enum UserType {STUDENT, HACKER}
 class User:
 	var type: UserType = UserType.STUDENT
