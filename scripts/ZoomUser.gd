@@ -105,10 +105,4 @@ class Hacker extends User:
 		if not cameraOff:
 			deathProgress = (elapsedTime / timeToDeath) * 100
 			if deathProgress >= 100:
-				endGame()
-				
-	func endGame():
-		pass
-		
-		
-		
+				Globals.endGame()

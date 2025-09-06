@@ -124,6 +124,7 @@ func _process(delta: float) -> void:
 	if elapsedTime >= till_next_user:
 		elapsedTime = fmod(elapsedTime, till_next_user)
 		generate_user()
+	Globals.score+=delta*50
 
 func _on_left_button_pressed() -> void:
 	current_page -= 1
