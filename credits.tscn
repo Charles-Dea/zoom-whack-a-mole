@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://tdt5iehobnsg"]
 
-[ext_resource type="Texture2D" uid="uid://6yb1rsfevcvq" path="res://credits.svg" id="1_nm7lk"]
+[ext_resource type="Texture2D" uid="uid://c8looa830vy1t" path="res://credits.png" id="1_nm7lk"]
 
 [node name="Button" type="Button"]
 anchors_preset = 15

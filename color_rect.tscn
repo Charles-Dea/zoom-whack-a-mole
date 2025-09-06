@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://eh1bp5mnhfdl"]
+[gd_scene load_steps=10 format=3 uid="uid://eh1bp5mnhfdl"]
 
 [ext_resource type="Texture2D" uid="uid://c5r80rktbduyt" path="res://audio.png" id="1_0xpbd"]
 [ext_resource type="Texture2D" uid="uid://ta1k1q2kvfn" path="res://video.png" id="2_dg4w3"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://clenjp6pfx3vt" path="res://participants.png" id="4_trtdd"]
 [ext_resource type="Texture2D" uid="uid://bhti27cwcpt3q" path="res://info.png" id="5_wtsn3"]
 [ext_resource type="Texture2D" uid="uid://yicmatk3p6nr" path="res://end.png" id="6_5lx7m"]
+[ext_resource type="Script" uid="uid://dnnisy5bccfm8" path="res://info.gd" id="6_kt3rk"]
 [ext_resource type="Script" uid="uid://cs50xt1v2t5hy" path="res://end.gd" id="7_dg4w3"]
+[ext_resource type="Script" uid="uid://bnkg4uotf8ypa" path="res://box.gd" id="7_trtdd"]
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 12
@@ -89,6 +91,34 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
 icon = ExtResource("5_wtsn3")
+script = ExtResource("6_kt3rk")
+
+[node name="Box" type="Button" parent="Info"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.615
+anchor_top = -0.105
+anchor_right = 0.615
+anchor_bottom = -0.105
+offset_left = -2.975
+offset_top = -392.015
+offset_right = 617.025
+offset_bottom = -0.0149999
+text = "Hacker:
+Tries to steal meeting info. Must be dealt with immediately.
+
+Disruptor:
+Uses annoying sounds and visuals to distract and irritate students.
+Not as large of a threat as the hacker,
+but should still be muted and  having his camera turned off promptly.
+
+Teleporter:
+Switches places with other students.
+Not as large of a threat as the previously mentioned ones, but can't be ignored.
+Make sure to kick any detected teleporters,
+but be careful not to ban an innocent student, or else he will hire a hacker."
+script = ExtResource("7_trtdd")
 
 [node name="End" type="Button" parent="."]
 layout_mode = 1
