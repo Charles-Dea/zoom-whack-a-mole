@@ -24,7 +24,7 @@ const userCameraOnChance: float = .2
 func adjustSpawnFreqBy(currentMin: float, currentMax: float, pctStep: float) -> Array[float]:
 	return [currentMin + (minSpawnFreq - currentMin) * pctStep, currentMax + (minSpawnFreq - currentMax) * pctStep]
 
-func load_image(image_name: String="wakeup"):
+func load_image(image_name: String="wakeup.jpg"):
 	return load("res://img/pfp/"+image_name)
 	
 func get_zoom_tile(row: int, col: int):
