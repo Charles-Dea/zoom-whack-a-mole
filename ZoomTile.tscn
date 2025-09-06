@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://p4i07p6jolpe"]
+[gd_scene load_steps=11 format=3 uid="uid://p4i07p6jolpe"]
 
 [ext_resource type="Script" uid="uid://cm541dmvulmrp" path="res://scripts/zoom_tile.gd" id="1_0i554"]
 [ext_resource type="Texture2D" uid="uid://b7422o4o1axlo" path="res://img/InitialsCircle.svg" id="1_o4w37"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bqsc5oa6h3hve" path="res://button.gd" id="6_cd8v7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxvv4"]
-bg_color = Color(1, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd8v7"]
 bg_color = Color(0.219608, 0.215686, 0.215686, 1)
@@ -23,9 +23,6 @@ border_color = Color(0.515547, 0.923417, 0.14334, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ase4v"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxvv4"]
-bg_color = Color(0, 0, 0, 0)
 
 [node name="ZoomTile" type="Panel" groups=["zoom_tile"]]
 offset_right = 312.0
