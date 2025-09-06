@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://eh1bp5mnhfdl"]
+[gd_scene load_steps=8 format=3 uid="uid://dtbdxt0vy6roy"]
 
 [ext_resource type="Texture2D" uid="uid://c5r80rktbduyt" path="res://audio.png" id="1_0xpbd"]
 [ext_resource type="Texture2D" uid="uid://ta1k1q2kvfn" path="res://video.png" id="2_dg4w3"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://clenjp6pfx3vt" path="res://participants.png" id="4_trtdd"]
 [ext_resource type="Texture2D" uid="uid://bhti27cwcpt3q" path="res://info.png" id="5_wtsn3"]
 [ext_resource type="Texture2D" uid="uid://yicmatk3p6nr" path="res://end.png" id="6_5lx7m"]
-[ext_resource type="Script" uid="uid://cs50xt1v2t5hy" path="res://end.gd" id="7_dg4w3"]
+[ext_resource type="Script" path="res://end.gd" id="7_dg4w3"]
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 12

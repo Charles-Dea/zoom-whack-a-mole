@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://blehuj66msp0o"]
+[gd_scene load_steps=3 format=3 uid="uid://bgskccopen8gb"]
 
 [ext_resource type="PackedScene" uid="uid://p4i07p6jolpe" path="res://ZoomTile.tscn" id="1_i6mgl"]
-[ext_resource type="Script" uid="uid://cjgtjjjsf8jdy" path="res://scripts/page_grid.gd" id="1_rcdk2"]
+[ext_resource type="Script" path="res://scripts/page_grid.gd" id="1_rcdk2"]
 
 [node name="PageGrid" type="GridContainer"]
 anchors_preset = 15
