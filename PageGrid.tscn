@@ -1,0 +1,119 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgskccopen8gb"]
+
+[ext_resource type="PackedScene" uid="uid://p4i07p6jolpe" path="res://ZoomTile.tscn" id="1_i6mgl"]
+[ext_resource type="Script" path="res://scripts/page_grid.gd" id="1_rcdk2"]
+
+[node name="PageGrid" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+columns = 5
+script = ExtResource("1_rcdk2")
+
+[node name="Col1" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Tile11" parent="Col1" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile12" parent="Col1" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile13" parent="Col1" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile14" parent="Col1" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile15" parent="Col1" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Col2" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Tile21" parent="Col2" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile22" parent="Col2" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile23" parent="Col2" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile24" parent="Col2" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile25" parent="Col2" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Col3" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Tile31" parent="Col3" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile32" parent="Col3" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile33" parent="Col3" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile34" parent="Col3" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile35" parent="Col3" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Col4" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Tile41" parent="Col4" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile42" parent="Col4" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile43" parent="Col4" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile44" parent="Col4" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile45" parent="Col4" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Col5" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Tile51" parent="Col5" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile52" parent="Col5" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile53" parent="Col5" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile54" parent="Col5" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
+
+[node name="Tile55" parent="Col5" instance=ExtResource("1_i6mgl")]
+layout_mode = 2
