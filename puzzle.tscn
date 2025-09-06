@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2gf8b5la4per"]
+[gd_scene load_steps=6 format=3 uid="uid://b2gf8b5la4per"]
 
 [ext_resource type="Script" uid="uid://k60kqnqeteha" path="res://puzzle.gd" id="1_77j1r"]
 [ext_resource type="Script" uid="uid://0nndrs7pq4b1" path="res://line_edit.gd" id="2_77j1r"]
+[ext_resource type="Script" uid="uid://tuacsj31gqid" path="res://progress_bar.gd" id="2_hgotr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77j1r"]
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgotr"]
 
@@ -27,6 +29,7 @@ offset_right = 744.0
 offset_bottom = 27.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_77j1r")
 show_percentage = false
+script = ExtResource("2_hgotr")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
@@ -36,6 +39,7 @@ offset_right = 568.0
 offset_bottom = 395.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_hgotr")
+max_length = 8
 script = ExtResource("2_77j1r")
 
 [node name="Label" type="Label" parent="."]
@@ -45,3 +49,5 @@ offset_right = 752.0
 offset_bottom = 188.0
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
+
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]

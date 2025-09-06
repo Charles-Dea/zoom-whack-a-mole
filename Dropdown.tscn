@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d20yih1gxn4gd"]
+[gd_scene load_steps=5 format=3 uid="uid://1dc733r66006"]
 
-[ext_resource type="Script" uid="uid://b1lldryxorfgj" path="res://dropdown.gd" id="1_35oqj"]
-[ext_resource type="Script" uid="uid://dx0w71dl3nuon" path="res://mute.gd" id="1_s2wjk"]
-[ext_resource type="Script" uid="uid://bqxrn3qp2ovug" path="res://camera.gd" id="2_703hi"]
-[ext_resource type="Script" uid="uid://bpwo6aomtbev4" path="res://kick.gd" id="4_y4kuo"]
+[ext_resource type="Script" path="res://dropdown.gd" id="1_35oqj"]
+[ext_resource type="Script" path="res://mute.gd" id="1_s2wjk"]
+[ext_resource type="Script" path="res://camera.gd" id="2_703hi"]
+[ext_resource type="Script" path="res://kick.gd" id="4_y4kuo"]
 
 [node name="Dropdown" type="Control"]
 layout_mode = 3

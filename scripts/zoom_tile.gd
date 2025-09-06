@@ -8,6 +8,7 @@ extends Panel
 @onready var deathProgressBar: ProgressBar = $CameraFootage/DeathProgressBar
 @onready var talkingPanel: Panel = $Talking
 
+var tileUser: Zoom.User
 @export var invisible: bool:
 	set(value):
 		invisible = value
@@ -57,6 +58,8 @@ func kick():
 	queue_free()
 
 func importFromUser(user: Zoom.User):
+	tileUser = user
+	#print(name+" "+user.firstName+" "+user.lastName)
 	firstName = user.firstName
 	lastName = user.lastName
 	cameraImage = user.cameraImage
@@ -69,7 +72,9 @@ func importFromUser(user: Zoom.User):
 	if user.type == Zoom.UserType.HACKER:
 		var hacker: Zoom.Hacker = user as Zoom.Hacker
 		deathProgressBar.visible = true
-		deathProgressBar.value = user.deathProgress
+		deathProgressBar.value = hacker.deathProgress
+	else:
+		deathProgressBar.visible = false
 			
 
 func _ready() -> void:
