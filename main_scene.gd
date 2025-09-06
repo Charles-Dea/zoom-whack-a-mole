@@ -91,6 +91,13 @@ func change_page_to(new_page: int):
 func update_zoom_tiles():
 	var the_users = current_page_users()
 	Globals.empty_all_zoom_tiles()
+	user_list = user_list.map(func (u):
+			if u.page == current_page:
+				u.focused = true
+			else:
+				u.focused = false
+			return u
+	)
 	Globals.reset_zoom_tiles(the_users)
 	Globals.show_zoom_tiles(the_users)
 	

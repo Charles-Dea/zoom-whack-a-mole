@@ -12,8 +12,12 @@ class User:
 			updateZoomTile()
 	var cameraOff: bool=true:
 		set(value):
-			cameraOff = value
+			if not value:
+				cameraOff = value
+			elif not forceCameraOff:
+				cameraOff = value
 			updateZoomTile()
+	var forceCameraOff: bool=false
 	var muted: bool=true:
 		set(value):
 			muted = value

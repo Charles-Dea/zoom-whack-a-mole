@@ -11,10 +11,16 @@ func _input(event):
 
 func _on_mute_pressed() -> void:
 	user.muted = true
+	var root = get_tree().current_scene
+	root.update_zoom_tiles()
 	queue_free()
 
 func _on_camera_pressed() -> void:
+	print("Camera pressed")
+	var root = get_tree().current_scene
+	user.forceCameraOff = true
 	user.cameraOff = true
+	root.update_zoom_tiles()
 	queue_free()
 
 func _on_kick_pressed() -> void:
