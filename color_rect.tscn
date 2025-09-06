@@ -31,6 +31,7 @@ icon = ExtResource("5_wtsn3")
 script = ExtResource("6_kt3rk")
 
 [node name="Box" type="Button" parent="Info"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.615
