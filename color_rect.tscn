@@ -31,7 +31,6 @@ icon = ExtResource("5_wtsn3")
 script = ExtResource("6_kt3rk")
 
 [node name="Box" type="Button" parent="Info"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.615
@@ -39,22 +38,14 @@ anchor_top = -0.14
 anchor_right = 0.615
 anchor_bottom = -0.14
 offset_left = 8.025
-offset_top = -392.02
-offset_right = 628.025
+offset_top = -136.02
+offset_right = 358.025
 offset_bottom = -0.02
-text = "Hacker:
-Tries to steal meeting info. Must be dealt with immediately.
-
-Disruptor:
-Uses annoying sounds and visuals to distract and irritate students.
-Not as large of a threat as the hacker,
-but should still be muted and  having his camera turned off promptly.
-
-Teleporter:
-Switches places with other students.
-Not as large of a threat as the previously mentioned ones, but can't be ignored.
-Make sure to kick any detected teleporters,
-but be careful not to ban an innocent student, or else he will hire a hacker."
+text = "People will join the class every few seconds.
+Some of these will be hackers,
+who must be kicked from the server.
+Be carful not to kick legitemate students,
+as this will increas the frequency of hackers."
 script = ExtResource("7_trtdd")
 
 [node name="End" type="Button" parent="."]
