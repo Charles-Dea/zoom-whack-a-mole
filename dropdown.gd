@@ -1,4 +1,5 @@
 extends Control
+
 func _ready():
 	position=get_local_mouse_position()
 func _input(event):
