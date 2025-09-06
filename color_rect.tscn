@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://eh1bp5mnhfdl"]
+[gd_scene load_steps=8 format=3 uid="uid://eh1bp5mnhfdl"]
 
 [ext_resource type="Texture2D" uid="uid://c5r80rktbduyt" path="res://audio.png" id="1_0xpbd"]
 [ext_resource type="Texture2D" uid="uid://ta1k1q2kvfn" path="res://video.png" id="2_dg4w3"]
-[ext_resource type="Texture2D" uid="uid://dnmcgvd1pj0lw" path="res://pause.png" id="3_kt3rk"]
+[ext_resource type="Texture2D" uid="uid://b8fdb0cnuer1l" path="res://pause.png" id="3_kt3rk"]
 [ext_resource type="Texture2D" uid="uid://clenjp6pfx3vt" path="res://participants.png" id="4_trtdd"]
-[ext_resource type="Texture2D" uid="uid://dvrkrekkb73cu" path="res://info.png" id="5_wtsn3"]
+[ext_resource type="Texture2D" uid="uid://bhti27cwcpt3q" path="res://info.png" id="5_wtsn3"]
 [ext_resource type="Texture2D" uid="uid://yicmatk3p6nr" path="res://end.png" id="6_5lx7m"]
+[ext_resource type="Script" uid="uid://cs50xt1v2t5hy" path="res://end.gd" id="7_dg4w3"]
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 12
@@ -103,3 +104,4 @@ offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
 icon = ExtResource("6_5lx7m")
+script = ExtResource("7_dg4w3")
