@@ -3,16 +3,16 @@ extends Node
 func _ready() -> void:
 	randomize()
 	
-const minSpawnFreq: float = 2.0
-const startingMinSpawnFreq: float = 4.0
-const startingMaxSpawnFreq: float = 7.0
+const minSpawnFreq: float = 1.0
+const startingMinSpawnFreq: float = 2.0
+const startingMaxSpawnFreq: float = 3.5
 
-const minSpawnFreqPctChange: float = .01
-const maxSpawnFreqPctChange: float = .05
+const minSpawnFreqPctChange: float = .02
+const maxSpawnFreqPctChange: float = .1
 
-const startingHackerChance: float = .2
-const maxHackerChance: float = .5
-const startingHackerDifficulty: float = .1
+const startingHackerChance: float = .4
+const maxHackerChance: float = 1
+const startingHackerDifficulty: float = .2
 
 const startingUserCountMin: int = 1
 const startingUserCountMax: int = 1

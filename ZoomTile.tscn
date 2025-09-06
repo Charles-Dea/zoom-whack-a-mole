@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://p4i07p6jolpe"]
+[gd_scene load_steps=11 format=3 uid="uid://p4i07p6jolpe"]
 
 [ext_resource type="Script" uid="uid://cm541dmvulmrp" path="res://scripts/zoom_tile.gd" id="1_0i554"]
 [ext_resource type="Texture2D" uid="uid://b7422o4o1axlo" path="res://img/InitialsCircle.svg" id="1_o4w37"]
 [ext_resource type="Texture2D" uid="uid://bpbjuvw1smyv0" path="res://img/MuteIcon.png" id="2_0i554"]
 [ext_resource type="Texture2D" uid="uid://i18sqv53e7rt" path="res://img/pfp/wakeup.jpg" id="2_6tcjm"]
 [ext_resource type="Texture2D" uid="uid://7nervyi6q6mp" path="res://img/NoCameraIcon.png" id="3_6tcjm"]
-[ext_resource type="Script" uid="uid://bqsc5oa6h3hve" path="res://button.gd" id="6_cd8v7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg80u"]
 bg_color = Color(1, 0, 0, 1)
@@ -138,7 +137,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6tcjm")
 
-[node name="Button" type="Button" parent="."]
+[node name="DropdownButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -148,4 +147,5 @@ grow_vertical = 2
 theme_override_styles/hover = SubResource("StyleBoxFlat_ase4v")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bxvv4")
 button_mask = 2
-script = ExtResource("6_cd8v7")
+
+[connection signal="pressed" from="DropdownButton" to="." method="_on_dropdown_button_pressed"]

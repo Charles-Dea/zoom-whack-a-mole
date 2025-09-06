@@ -57,6 +57,8 @@ func generate_user(instant: bool = false):
 	var chanceRoll: float = randf()
 	if chanceRoll <= currentHackerChance:
 		var newHacker = Zoom.Hacker.new(Globals.random_first_name(), Globals.random_last_name(), true, false, false, newUserRow, newUserCol, newUserPage)
+		if newUserPage == current_page:
+			newHacker.focused = true
 		user_list.append(newHacker)
 	else:
 		var cameraOnIn: float = -1
@@ -89,6 +91,13 @@ func change_page_to(new_page: int):
 func update_zoom_tiles():
 	var the_users = current_page_users()
 	Globals.empty_all_zoom_tiles()
+	user_list = user_list.map(func (u):
+			if u.page == current_page:
+				u.focused = true
+			else:
+				u.focused = false
+			return u
+	)
 	Globals.reset_zoom_tiles(the_users)
 	Globals.show_zoom_tiles(the_users)
 	
