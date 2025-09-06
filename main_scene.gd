@@ -116,6 +116,7 @@ func _ready() -> void:
 	for i in range(startingUsers):
 		generate_user(true)
 	current_page = 1
+	Globals.score = 0
 
 func _process(delta: float) -> void:
 	for user in user_list:
