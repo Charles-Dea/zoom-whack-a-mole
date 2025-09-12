@@ -9,4 +9,7 @@ func _on_credits_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	if OS.has_feature("web"):
+		JavaScriptBridge.eval("window.location.href='https://max-harold.itch.io/zoom-hacker-whacker'")
+	else:
+		get_tree().quit()
