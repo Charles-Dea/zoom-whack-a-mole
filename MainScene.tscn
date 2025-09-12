@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://vftrfnlxnjbc"]
+[gd_scene load_steps=8 format=3 uid="uid://vftrfnlxnjbc"]
 
 [ext_resource type="Script" uid="uid://06iq3o85m8ir" path="res://main_scene.gd" id="1_rpqi1"]
 [ext_resource type="PackedScene" uid="uid://blehuj66msp0o" path="res://PageGrid.tscn" id="1_x4av3"]
+[ext_resource type="Texture2D" uid="uid://dsp5cwxp13an6" path="res://Left Arrow Game.png" id="2_a814b"]
 [ext_resource type="PackedScene" uid="uid://eh1bp5mnhfdl" path="res://color_rect.tscn" id="2_rpqi1"]
+[ext_resource type="Texture2D" uid="uid://dsemvwvhr8iun" path="res://Right Arrow Game.png" id="4_5crlr"]
 [ext_resource type="AudioStream" uid="uid://cbujyf34wlke8" path="res://dvine - Unknown Reality.mp3" id="4_uxrcv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4av3"]
@@ -55,7 +57,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxFlat_x4av3")
-text = "←"
+text = " "
+
+[node name="TextureRect" type="TextureRect" parent="UIStack/NavAndMain/LeftButtonParent/LeftButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a814b")
+expand_mode = 5
 
 [node name="PageGrid" parent="UIStack/NavAndMain" instance=ExtResource("1_x4av3")]
 layout_mode = 2
@@ -79,7 +91,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxFlat_x4av3")
-text = "→"
+text = " "
+
+[node name="TextureRect" type="TextureRect" parent="UIStack/NavAndMain/RightButtonParent/RightButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5crlr")
+expand_mode = 5
 
 [node name="ColorRect" parent="UIStack" instance=ExtResource("2_rpqi1")]
 layout_mode = 2

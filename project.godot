@@ -13,6 +13,8 @@ config_version=5
 config/name="Zoom Hacker Whacker"
 run/main_scene="uid://bntk0l4nt078i"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/image="uid://bu8uq5uajv4hd"
+config/icon="uid://bu8uq5uajv4hd"
 
 [autoload]
 
