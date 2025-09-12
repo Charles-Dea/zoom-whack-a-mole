@@ -28,7 +28,7 @@ func _on_kick_pressed() -> void:
 	else:
 		root.currentHackerDifficulty = min(root.currentHackerDifficulty + Globals.userDeathPenalty, 1.0)
 	root.user_list = root.user_list.filter(func (u): return u != user)
-	play_sfx(root, "res://Hacker Kick.mp3", -20)
+	play_sfx(root, "res://Hacker Kick.mp3", -5)
 	root.update_zoom_tiles()
 	queue_free()
 

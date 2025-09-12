@@ -10,11 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Zoom Whack-a-Mole"
+config/name="Zoom Hacker Whacker"
 run/main_scene="uid://bntk0l4nt078i"
 config/features=PackedStringArray("4.4", "Forward Plus")
-boot_splash/image="uid://dye7hdclg0s0f"
-config/icon="uid://dvon0gdpfq7cc"
 
 [autoload]
 

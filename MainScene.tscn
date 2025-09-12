@@ -55,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxFlat_x4av3")
-text = "◀"
+text = "←"
 
 [node name="PageGrid" parent="UIStack/NavAndMain" instance=ExtResource("1_x4av3")]
 layout_mode = 2
@@ -79,7 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxFlat_x4av3")
-text = "▶"
+text = "→"
 
 [node name="ColorRect" parent="UIStack" instance=ExtResource("2_rpqi1")]
 layout_mode = 2
