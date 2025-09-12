@@ -79,21 +79,23 @@ func random_pfp():
 	return load_image(chosen_name)
 
 func get_pfp_names() -> Array[String]:
-	var files: Array[String] = []
-	var path = "res://img/pfp"
-	var dir = DirAccess.open(path)
-	if dir:
-		dir.list_dir_begin()
-		var filename = dir.get_next()
-		while filename != "":
-			var ext = filename.get_extension().to_lower()
-			if ext in ["png", "jpg", "jpeg"]:
-				if not dir.current_is_dir():
-					files.append(filename.get_file())  # removes extension
-			filename = dir.get_next()
-		dir.list_dir_end()
-	else:
-		push_error("Cannot open directory: " + path)
+	#var files: Array[String] = []
+	#var path = "res://img/pfp"
+	#var dir = DirAccess.open(path)
+	#if dir:
+		#dir.list_dir_begin()
+		#var filename = dir.get_next()
+		#while filename != "":
+			#var ext = filename.get_extension().to_lower()
+			#if ext in ["png", "jpg", "jpeg"]:
+				#if not dir.current_is_dir():
+					#files.append(filename.get_file())  # removes extension
+			#filename = dir.get_next()
+		#dir.list_dir_end()
+	#else:
+		#push_error("Cannot open directory: " + path)
+	#print(files)
+	var files: Array[String] = ["Annoyed Kitty.jpg", "Annoyed Pakistani.png", "Confused Bro.png", "doggo.jpg", "Girl and Cat Stare.png", "Girl Stare.png", "Goofy Man.png", "Happy Sammy.jpg", "Linus Stare.jpg", "Oops kid.png", "Peeker.png", "wakeup.jpg", "Walked In On Myself.png"]
 	return files
 
 func get_the_tree():
