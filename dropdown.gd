@@ -1,4 +1,4 @@
-extends Control
+extends VBoxContainer
 
 var user: Zoom.User
 

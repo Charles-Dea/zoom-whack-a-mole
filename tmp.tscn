@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://1dc733r66006"]
-
-[ext_resource type="Script" uid="uid://b1lldryxorfgj" path="res://dropdown.gd" id="1_35oqj"]
+[gd_scene load_steps=2 format=3 uid="uid://hukg1bjlgcid"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03i82"]
 bg_color = Color(0.2, 0.686275, 0.85098, 1)
@@ -8,29 +6,21 @@ bg_color = Color(0.2, 0.686275, 0.85098, 1)
 [node name="VBoxContainer" type="VBoxContainer"]
 offset_right = 135.0
 offset_bottom = 101.0
-script = ExtResource("1_35oqj")
 
 [node name="Mute" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 18
 theme_override_styles/hover = SubResource("StyleBoxFlat_03i82")
 text = "Mute"
 
 [node name="Camera" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 18
 theme_override_styles/hover = SubResource("StyleBoxFlat_03i82")
-text = "  Turn off Camera  "
+text = "Turn off Camera"
 
 [node name="Kick" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 18
 theme_override_styles/hover = SubResource("StyleBoxFlat_03i82")
 text = "Kick"
-
-[connection signal="pressed" from="Mute" to="." method="_on_mute_pressed"]
-[connection signal="pressed" from="Camera" to="." method="_on_camera_pressed"]
-[connection signal="pressed" from="Kick" to="." method="_on_kick_pressed"]
